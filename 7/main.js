@@ -16,10 +16,23 @@ const NURVV = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdCVDfr_z5E
 const Stryd = 'https://wpassets.trainingpeaks.com/wp-content/uploads/2019/04/16115345/stryd-logo-960x600.png'
 const OnRunning = 'https://www.clipartmax.com/png/small/8-82162_on-running-com-on-running-logo.png'
 const PlaySight = 'https://playsight.com/wp-content/uploads/2020/09/logo-playsight-GO-plus.png'
-const ShotTracker = 'https://i.ytimg.com/vi/ntQKPjcbYf0/maxresdefault.jpg'
+const ShotTracker = 'https://shottracker.com/themes/st2018/img/shottracker-logo.png'
 const komdor =  'https://storage.googleapis.com/bubble-finder/$3R0csqz92fhx3Y1Id03YWTfq9WjqypSEamgY2KWlPMIwnBUAOZYUxY'
 const matrix = 'https://upload.wikimedia.org/wikipedia/he/7/74/Matrix_logo.jpg'
 
+const zeppLink = 'https://www.zepp.com/'
+const WhoopLink = 'https://www.whoop.com/'
+const vimazyLink = 'https://vimazi.com/'
+const garminLink = 'https://shorturl.at/dzLNR'
+const StravaLink = 'https://www.strava.com/onboarding'
+const NURVVLink = 'https://www.nurvv.com/en-us/'
+const StrydLink = 'https://www.stryd.com/gl/en'
+const OnRunningLink = 'https://www.on-running.com/en-il/'
+const PlaySightLink = 'https://playsight.com/'
+const ShotTrackerLink = 'https://shottracker.com/'
+
+
+const ARRAY_LINK=[zeppLink,WhoopLink,vimazyLink,garminLink,StravaLink,NURVVLink,StrydLink,OnRunningLink,PlaySightLink,ShotTrackerLink]
 const PICTURE_ARRAY = [zepp,Whoop,vimazy,garmin,Strava,NURVV,Stryd,OnRunning,PlaySight,ShotTracker,komdor,matrix]
 // for (let i = 0; i <PICTURE_ARRAY.length; i++) {
 //     MyDiv.innerHTML+=
@@ -28,26 +41,31 @@ const PICTURE_ARRAY = [zepp,Whoop,vimazy,garmin,Strava,NURVV,Stryd,OnRunning,Pla
 //     `
 // }
 const citiesArray=['nyc','boston','tlv','hong-kong','rome','ramt-gan','gvs','jerusalem','rehovot','pth']
+const arrayLink=[]
 let arrayCompany=[]
 
-for (let j = 0; j < 9; j++) {
+for (let j = 0; j < 10; j++) {
     let objectCompany={
         CompanyName:`${HITEC_ARRAY[j]}`,
         image:`${PICTURE_ARRAY[j]}`,
         city:`${citiesArray[j]}`,
-        id:'',
-        subject:'',
-        link:''
+        id:Math.floor(Math.random()*100),
+        subject:'sport',
+        link:`${ARRAY_LINK[j]}`
     }
     arrayCompany.push(objectCompany)
 }
-console.log(arrayCompany[0].CompanyName);
-for (let g = 0; g < arrayCompany.length; g++) {
+console.log(arrayCompany[9].CompanyName);
+for (let g = 0; g < 10; g++) {
   divForPrintObject.innerHTML+=
     `<div id='cardCompany' style=border:solid;>
     <h1>${arrayCompany[g].CompanyName}</h1>
-    <img src="${arrayCompany[g].image}">
+    <a href="${arrayCompany[g].link}">
+        <img src="${arrayCompany[g].image}">
+    </a>
     <p>${arrayCompany[g].city}</p>
+    <span>${arrayCompany[g].id}</span>
     </div>
     `    
+   
 }
