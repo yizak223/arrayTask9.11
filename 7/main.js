@@ -58,14 +58,21 @@ for (let j = 0; j < 10; j++) {
 console.log(arrayCompany[9].CompanyName);
 for (let g = 0; g < 10; g++) {
   divForPrintObject.innerHTML+=
-    `<div id='cardCompany' style=border:solid;>
+    `<div class='cardCompany' style=border:solid;>
     <h1>${arrayCompany[g].CompanyName}</h1>
     <a href="${arrayCompany[g].link}">
         <img src="${arrayCompany[g].image}">
     </a>
     <p>${arrayCompany[g].city}</p>
-    <span>${arrayCompany[g].id}</span>
     </div>
-    `    
-   
+    ` 
+  
 }
+
+let collecrionCard=document.querySelectorAll('.cardCompany')
+
+    for (const i in arrayCompany) {
+        collecrionCard[i].innerHTML += `
+        <span>${arrayCompany[i].id}</span>
+        `
+}  
